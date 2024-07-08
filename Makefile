@@ -6,7 +6,7 @@
 #    By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:32:52 by bel-barb          #+#    #+#              #
-#    Updated: 2024/07/03 00:54:09 by bel-barb         ###   ########.fr        #
+#    Updated: 2024/07/08 22:56:39 by bel-barb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC = fract-ol.c atof.c helpers.c
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(FLAGS) $(SRC) -lmlx -framework OpenGL -framework AppKit -o $(NAME) -O3
 
 clean:
 	rm -f $(NAME)

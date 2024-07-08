@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:51:48 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/03 01:19:25 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/08 22:38:30 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	handle_keys(int key, t_data *data)
 {
 	if (key == 53)
+	{
 		exit(0);
+	}
 	else if (key == 69)
 		data->zoom *= 1.1;
 	else if (key == 78)
@@ -32,7 +34,7 @@ int	handle_keys(int key, t_data *data)
 		data->theme = (data->theme + 1) % 3;
 	else if (key == 34)
 		data->iterations += 1;
-	mandelbrot(data);
+	fractol(data);
 	return (0);
 }
 

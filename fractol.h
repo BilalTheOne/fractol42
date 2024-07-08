@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:26:55 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/03 01:19:38 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/08 22:38:18 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # include <mlx.h>
 # include <stdlib.h>
-#include <unistd.h>
+# include <unistd.h>
 
 typedef struct s_data
 {
@@ -47,7 +47,7 @@ typedef struct s_complex
 
 double		ft_atof(const char *str);
 int			handle_keys(int key, t_data *data);
-void		mandelbrot(t_data *data);
+void		fractol(t_data *data);
 int			get_color(int iteration, int theme);
 t_complex	pixel_to_complex(int x, int y, t_data *data);
 void		put_pixel_to_image(t_data *data, int x, int y, int color);
