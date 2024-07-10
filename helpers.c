@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:51:48 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/08 22:38:30 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/10 01:01:18 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	handle_keys(int key, t_data *data)
 {
 	if (key == 53)
 	{
-		exit(0);
+		exit(0);//to do
 	}
 	else if (key == 69)
 		data->zoom *= 1.1;
