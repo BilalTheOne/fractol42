@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/30 21:50:58 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/10 01:40:02 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/13 04:47:27 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,24 +113,27 @@ int	window_init(t_data *data)
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	
+	int		i ;
+
 	if (argc < 2)
 	{
 		write(1, "No set selected\n", 17);
 		return (0);
 	}
-	if (parsing(argc, argv) == 1)
+	i = parsing(argc, argv);
+	if (i == 1)
 		return (0);
-	if (argv[1][0] == 'j')
+	data.set = 'm';
+	if (i == 2)
 	{
+		data.set = 'j';
 		data.julia_re = ft_atof(argv[2]);
 		data.julia_im = ft_atof(argv[3]);
 	}
 	if (window_init(&data) == 1)
 		return (0);
-	data.set = argv[1][0];
 	fractol(&data);
 	mlx_key_hook(data.win_ptr, handle_keys, &data);
 	mlx_loop(data.mlx_ptr);
-	return (0);
+	return (free_all(&data), 0);
 }

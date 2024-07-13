@@ -1,2 +1,0 @@
-# fractol42
-fractol

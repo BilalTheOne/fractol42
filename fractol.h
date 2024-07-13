@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:26:55 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/10 00:48:09 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/13 04:23:02 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,9 @@ int			get_color(int iteration, int theme);
 t_complex	pixel_to_complex(int x, int y, t_data *data);
 void		put_pixel_to_image(t_data *data, int x, int y, int color);
 int			parsing(int argc, char **argv);
-
+void		free_all(t_data *data);
+int			parse_name(char	*str);
+void		ft_tolower(char **str);
+int			check_spaces(char *num);
+int			overflow(char *str);
 #endif

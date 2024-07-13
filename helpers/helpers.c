@@ -6,17 +6,18 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:51:48 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/10 01:01:18 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/13 04:08:03 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../fractol.h"
 
 int	handle_keys(int key, t_data *data)
 {
 	if (key == 53)
 	{
-		exit(0);//to do
+		free_all(data);
+		exit(0);
 	}
 	else if (key == 69)
 		data->zoom *= 1.1;
@@ -77,8 +78,8 @@ t_complex	pixel_to_complex(int x, int y, t_data *data)
 
 	min_re = -2.0;
 	max_re = 1.0;
-	min_im = -1.2;
-	max_im = min_im + (max_re - min_re) * HEIGHT / WIDTH;
+	min_im = -1.5;
+	max_im = 1.5 * HEIGHT / WIDTH;
 	min_re = min_re / data->zoom + data->offset_x;
 	max_re = max_re / data->zoom + data->offset_x;
 	min_im = min_im / data->zoom + data->offset_y;

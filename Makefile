@@ -6,23 +6,29 @@
 #    By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 20:32:52 by bel-barb          #+#    #+#              #
-#    Updated: 2024/07/10 00:48:21 by bel-barb         ###   ########.fr        #
+#    Updated: 2024/07/13 01:47:32 by bel-barb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror 
+MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 NAME = fractol
-SRC = fract-ol.c atof.c helpers.c helpers2.c
+SRC = fract-ol.c atof.c helpers/helpers.c helpers/parsing.c helpers/helpers3.c helpers/parsing2.c
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -lmlx -framework OpenGL -framework AppKit -o $(NAME) -O3
-
+%o: %c fractol.h
+	$(CC) $(FLAGS) -c $< -o $@
+	
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) $(MLXFLAGS) -o $(NAME)
 clean:
+	rm -f $(OBJ)
+fclean: clean
 	rm -f $(NAME)
 
 re: clean all
 
-.PHONY: all claen re
+.PHONY: all clean re
