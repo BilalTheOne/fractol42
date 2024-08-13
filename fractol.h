@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 00:26:55 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/13 04:23:02 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/16 00:30:09 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FRACTOL_H
 # define WIDTH 800
 # define HEIGHT 800
-# define ITER 40
+# define ITER 20
 
 # include <mlx.h>
 # include <stdlib.h>
@@ -47,6 +47,7 @@ typedef struct s_complex
 
 double		ft_atof(const char *str);
 int			handle_keys(int key, t_data *data);
+int			handle_mouse(int key, int x, int y, t_data *data);
 void		fractol(t_data *data);
 int			get_color(int iteration, int theme);
 t_complex	pixel_to_complex(int x, int y, t_data *data);
@@ -57,4 +58,6 @@ int			parse_name(char	*str);
 void		ft_tolower(char **str);
 int			check_spaces(char *num);
 int			overflow(char *str);
+int			closeit(t_data *data);
+void		all_hooks(t_data *data);
 #endif

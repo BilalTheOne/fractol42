@@ -6,7 +6,7 @@
 /*   By: bel-barb <bel-barb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 01:32:09 by bel-barb          #+#    #+#             */
-/*   Updated: 2024/07/13 04:19:38 by bel-barb         ###   ########.fr       */
+/*   Updated: 2024/07/14 00:29:17 by bel-barb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	parsing(int argc, char **argv)
 	ft_tolower(&argv[1]);
 	i = parse_name(argv[1]);
 	if (i == 0)
-		return (write(1, "Wrong set", 10), 1);
+		return (write(1, "Wrong set\n", 11), 1);
 	if (i == 3 && argc > 2)
 	{
 		write(1, "mandelbrot set does not need more arguments\n", 45);
